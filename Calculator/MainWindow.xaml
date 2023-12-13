@@ -1,0 +1,101 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Calculator" Height="530" Width="300">
+    <Window.Resources>
+        <Style TargetType="TextBox" x:Key="BorderlessTextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="15,0,15,0"/>
+            <Setter Property="TextAlignment" Value="Right"/>
+            <Setter Property="FontSize" Value="38"/>
+        </Style>
+        <Style TargetType="Button" x:Key="RoundButton">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#FF3A3838"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="40"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="Button" x:Key="DimGrayButton" BasedOn="{StaticResource RoundButton}">
+            <Setter Property="Background" Value="DimGray"/>
+        </Style>
+        <Style TargetType="Button" x:Key="OrangeButton" BasedOn="{StaticResource RoundButton}">
+            <Setter Property="Background" Value="#FFFF7745"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="/Resources/collapse.png" Width="24" Height="24" HorizontalAlignment="Left" Margin="10,10,0,0"></Image>
+                <Image Grid.Column="1" Source="/Resources/math.png" Width="24" Height="24" Margin="0,10,0,0"/>
+                <Image Grid.Column="2" Source="/Resources/squares.png" Width="24" Height="24" Margin="0,10,0,0"/>
+                <Image Grid.Column="3" Source="/Resources/menu.png" Width="24" Height="24" Margin="0,10,10,0"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBox Text="19" Grid.Row="0" Style="{StaticResource BorderlessTextBox}"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.Resources>
+                <Style TargetType="Button" BasedOn="{StaticResource RoundButton}"/>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Content="C" Grid.Column="0" Grid.Row="0" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="%" Grid.Column="1" Grid.Row="0" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="&lt;" Grid.Column="2" Grid.Row="0" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="÷" Grid.Column="3" Grid.Row="0" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="7" Grid.Column="0" Grid.Row="1"/>
+            <Button Content="8" Grid.Column="1" Grid.Row="1"/>
+            <Button Content="9" Grid.Column="2" Grid.Row="1"/>
+            <Button Content="×" Grid.Column="3" Grid.Row="1" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="4" Grid.Column="0" Grid.Row="2"/>
+            <Button Content="5" Grid.Column="1" Grid.Row="2"/>
+            <Button Content="6" Grid.Column="2" Grid.Row="2"/>
+            <Button Content="-" Grid.Column="3" Grid.Row="2" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="1" Grid.Column="0" Grid.Row="3"/>
+            <Button Content="2" Grid.Column="1" Grid.Row="3"/>
+            <Button Content="3" Grid.Column="2" Grid.Row="3"/>
+            <Button Content="+" Grid.Column="3" Grid.Row="3" Style="{StaticResource DimGrayButton}"/>
+            <Button Content="00" Grid.Column="0" Grid.Row="4"/>
+            <Button Content="0" Grid.Column="1" Grid.Row="4"/>
+            <Button Content="," Grid.Column="2" Grid.Row="4"/>
+            <Button Content="=" Grid.Column="3" Grid.Row="4" Style="{StaticResource OrangeButton}"/>
+        </Grid>
+    </Grid>
+</Window>

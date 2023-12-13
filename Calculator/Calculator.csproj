@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\collapse.png" />
+    <None Remove="Resources\math.png" />
+    <None Remove="Resources\menu.png" />
+    <None Remove="Resources\squares.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\collapse.png" />
+    <Resource Include="Resources\math.png" />
+    <Resource Include="Resources\menu.png" />
+    <Resource Include="Resources\squares.png" />
+  </ItemGroup>
+
+</Project>
